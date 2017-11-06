@@ -38,6 +38,8 @@ Partial Class Login
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
         Me.OK = New System.Windows.Forms.Button()
         Me.Cancel = New System.Windows.Forms.Button()
+        Me.lan = New System.Windows.Forms.Button()
+        Me.internet = New System.Windows.Forms.Button()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -100,6 +102,24 @@ Partial Class Login
         Me.Cancel.TabIndex = 5
         Me.Cancel.Text = "&Cancel"
         '
+        'lan
+        '
+        Me.lan.Location = New System.Drawing.Point(197, 132)
+        Me.lan.Name = "lan"
+        Me.lan.Size = New System.Drawing.Size(75, 23)
+        Me.lan.TabIndex = 6
+        Me.lan.Text = "LAN"
+        Me.lan.UseVisualStyleBackColor = True
+        '
+        'internet
+        '
+        Me.internet.Location = New System.Drawing.Point(278, 132)
+        Me.internet.Name = "internet"
+        Me.internet.Size = New System.Drawing.Size(75, 23)
+        Me.internet.TabIndex = 7
+        Me.internet.Text = "Internet"
+        Me.internet.UseVisualStyleBackColor = True
+        '
         'Login
         '
         Me.AcceptButton = Me.OK
@@ -108,6 +128,8 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 192)
+        Me.Controls.Add(Me.internet)
+        Me.Controls.Add(Me.lan)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.PasswordTextBox)
@@ -128,4 +150,6 @@ Partial Class Login
 
     End Sub
 
+    Friend WithEvents lan As Button
+    Friend WithEvents internet As Button
 End Class
