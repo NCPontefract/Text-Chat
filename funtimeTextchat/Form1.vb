@@ -1,4 +1,7 @@
 ﻿Public Class Form1
+    Friend nick As String
+    Friend room As String
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Join.Click
         MainFunctions_NoReturns.join()
     End Sub

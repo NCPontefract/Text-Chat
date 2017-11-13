@@ -40,6 +40,8 @@ Partial Class Login
         Me.Cancel = New System.Windows.Forms.Button()
         Me.Lan = New System.Windows.Forms.RadioButton()
         Me.Internet = New System.Windows.Forms.RadioButton()
+        Me.RoomLabel = New System.Windows.Forms.Label()
+        Me.RoomTextBox = New System.Windows.Forms.TextBox()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,7 +56,7 @@ Partial Class Login
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Location = New System.Drawing.Point(172, 24)
+        Me.UsernameLabel.Location = New System.Drawing.Point(172, 1)
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 0
@@ -63,7 +65,7 @@ Partial Class Login
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Location = New System.Drawing.Point(172, 81)
+        Me.PasswordLabel.Location = New System.Drawing.Point(172, 39)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
         Me.PasswordLabel.TabIndex = 2
@@ -72,14 +74,14 @@ Partial Class Login
         '
         'UsernameTextBox
         '
-        Me.UsernameTextBox.Location = New System.Drawing.Point(174, 44)
+        Me.UsernameTextBox.Location = New System.Drawing.Point(174, 21)
         Me.UsernameTextBox.Name = "UsernameTextBox"
         Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
         Me.UsernameTextBox.TabIndex = 1
         '
         'PasswordTextBox
         '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(174, 101)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(174, 59)
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
@@ -124,6 +126,24 @@ Partial Class Login
         Me.Internet.Text = "Internet"
         Me.Internet.UseVisualStyleBackColor = True
         '
+        'RoomLabel
+        '
+        Me.RoomLabel.Location = New System.Drawing.Point(173, 80)
+        Me.RoomLabel.Name = "RoomLabel"
+        Me.RoomLabel.Size = New System.Drawing.Size(220, 23)
+        Me.RoomLabel.TabIndex = 2
+        Me.RoomLabel.Text = "&Room ID"
+        Me.RoomLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.RoomLabel.Visible = False
+        '
+        'RoomTextBox
+        '
+        Me.RoomTextBox.Location = New System.Drawing.Point(175, 100)
+        Me.RoomTextBox.Name = "RoomTextBox"
+        Me.RoomTextBox.Size = New System.Drawing.Size(220, 20)
+        Me.RoomTextBox.TabIndex = 3
+        Me.RoomTextBox.Visible = False
+        '
         'Login
         '
         Me.AcceptButton = Me.OK
@@ -136,7 +156,9 @@ Partial Class Login
         Me.Controls.Add(Me.Lan)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
+        Me.Controls.Add(Me.RoomTextBox)
         Me.Controls.Add(Me.PasswordTextBox)
+        Me.Controls.Add(Me.RoomLabel)
         Me.Controls.Add(Me.UsernameTextBox)
         Me.Controls.Add(Me.PasswordLabel)
         Me.Controls.Add(Me.UsernameLabel)
@@ -156,4 +178,6 @@ Partial Class Login
 
     Friend WithEvents Lan As RadioButton
     Friend WithEvents Internet As RadioButton
+    Friend WithEvents RoomLabel As Label
+    Friend WithEvents RoomTextBox As TextBox
 End Class
