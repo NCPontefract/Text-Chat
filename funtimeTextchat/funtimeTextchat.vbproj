@@ -79,6 +79,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ftpModule.vb" />
     <Compile Include="InternetHandler.Designer.vb">
       <DependentUpon>InternetHandler.vb</DependentUpon>
     </Compile>
