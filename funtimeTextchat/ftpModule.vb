@@ -16,19 +16,29 @@ Module ftpModule
     End Function
 
     Friend Function download(localStorage, ftpAddr, fileName) 'Download A File From FTP Site'
+        Try
+            Dim toDownload As String = (ftpAddr + "/" + fileName)
+            MsgBox(toDownload)
+            Dim wrDownload As FtpWebRequest = WebRequest.Create(toDownload) 'Create Request To Download File'
 
-        Dim toDownload As String = (ftpAddr + "/" + fileName)
-        Dim wrDownload As FtpWebRequest = WebRequest.Create(ftpAddr) 'Create Request To Download File'
+            wrDownload.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File'
+            'Specify Username & Password'
+            wrDownload.Credentials = New NetworkCredential("IEUser", "Passw0rd!")
+            Dim rDownloadResponse As FtpWebResponse = wrDownload.GetResponse() 'Response Object'
+            Dim strFileStream As Stream = rDownloadResponse.GetResponseStream() 'Incoming File Stream'
+            Dim srFile As StreamReader = New StreamReader(strFileStream) 'Read File Stream Data'
+            Dim text As String = srFile.ReadToEnd
 
-        wrDownload.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File'
-        Dim rDownloadResponse As FtpWebResponse = wrDownload.GetResponse() 'Response Object'
-        Dim strFileStream As Stream = rDownloadResponse.GetResponseStream() 'Incoming File Stream'
-        Dim srFile As StreamReader = New StreamReader(strFileStream) 'Read File Stream Data'
+            'Console.WriteLine(srFile.ReadToEnd())
+            Console.WriteLine("Download Complete, status {0}", rDownloadResponse.StatusDescription) 'Show Status Of Download'
 
-        Console.WriteLine(srFile.ReadToEnd())
-        Console.WriteLine("Download Complete, status {0}", rDownloadResponse.StatusDescription) 'Show Status Of Download'
-        srFile.Close() 'Close
-        rDownloadResponse.Close()
+            File.WriteAllText(localStorage + "/" + fileName, text)
+            srFile.Close() 'Close
+            rDownloadResponse.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
 
     End Function
 

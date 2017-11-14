@@ -22,7 +22,7 @@
 
     Private Sub action_Click(sender As Object, e As EventArgs) Handles action.Click
         If (DownloadBttn.Checked = True) Then
-            ftpModule.download(Application.StartupPath + "\downloads", ftpAddrVar, filePathVar + "\" + fileNameVar)
+            ftpModule.download(Application.StartupPath + "\downloads", "ftp://10.0.2.15", fileNameVar)
         ElseIf (UploadBttn.Checked = True) Then
 
         ElseIf (DeleteBttn.Checked = True) Then
