@@ -11,6 +11,7 @@ Public Class Login
                 Form1.Show()
                 groupID = RoomTextBox.Text
                 Me.Hide()
+                InternetHandler.Show()
             End If
         ElseIf (Internet.Checked = True) Then
             loginProcedure("Internet", UsernameTextBox.Text, PasswordTextBox.Text)
