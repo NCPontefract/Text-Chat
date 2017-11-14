@@ -2,22 +2,29 @@
 Imports System.IO
 
 Module ftpModule
-    Friend Function upload(localFileAddr, ftpAddr, fileName) 'Upload File to FTP site
-        'Create Request To Upload File'
-        Dim wrUpload As FtpWebRequest = DirectCast(WebRequest.Create(ftpAddr + "/" + fileName), FtpWebRequest)
+    Friend Function upload(localFileAddr, ftpAddr, fileName, username, password) 'Upload File to FTP site
+        Try
+            'Create Request To Upload File'
+            Dim wrUpload As FtpWebRequest = DirectCast(WebRequest.Create(ftpAddr + "/" + fileName), FtpWebRequest)
 
-        wrUpload.Method = WebRequestMethods.Ftp.UploadFile 'Start Upload Process'
-        Dim btfile() As Byte = File.ReadAllBytes(localFileAddr) 'Locate File And Store It In Byte Array'
-        Dim strFile As Stream = wrUpload.GetRequestStream() 'Get File'
-        strFile.Write(btfile, 0, btfile.Length) 'Upload Each Byte'
+            wrUpload.Method = WebRequestMethods.Ftp.UploadFile 'Start Upload Process'
+            wrUpload.Credentials = New NetworkCredential(username.ToString, password.ToString) 'Specify Username & Password
+            Dim btfile() As Byte = File.ReadAllBytes(localFileAddr + "\" + fileName) 'Locate File And Store It In Byte Array'
+            Dim strFile As Stream = wrUpload.GetRequestStream() 'Get File'
+            strFile.Write(btfile, 0, btfile.Length) 'Upload Each Byte'
 
-        strFile.Close()
-        strFile.Dispose()
+            strFile.Close()
+            strFile.Dispose()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Function
 
     Friend Function download(localStorage As String, ftpAddr As String, fileName As String, username As String, password As String) 'Download A File From FTP Site'
         Try
-            Dim toDownload As String = (ftpAddr + "/" + fileName) 'Complete string of what to downlaod
+            ' Dim toDownload As String = (ftpAddr + "/" + fileName) 'Complete string of what to downlaod
+            Dim toDownload As String = (ftpAddr + "/" + fileName)
             ' Debugging tool -> MsgBox(toDownload)
             Dim wrDownload As FtpWebRequest = WebRequest.Create(toDownload) 'Create Request To Download File
 

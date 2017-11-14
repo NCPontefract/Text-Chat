@@ -5,7 +5,7 @@
     Friend filePathVar
 
     Private Sub setIP_Click(sender As Object, e As EventArgs) Handles setIP.Click
-        ftpAddrVar = setIP.Text
+        ftpAddrVar = IPAddr.Text
     End Sub
 
     Private Sub SetPath_Click(sender As Object, e As EventArgs) Handles SetFilePath.Click
@@ -22,11 +22,11 @@
 
     Private Sub action_Click(sender As Object, e As EventArgs) Handles action.Click
         If (DownloadBttn.Checked = True) Then
-            ftpModule.download(DownloadLocation.Text, "ftp://" + IPAddr.Text, fileNameVar, InputBox("Username"), InputBox("Password"))
+            ftpModule.download(DownloadLocation.Text, "ftp://" + ftpAddrVar, fileNameVar, InputBox("Username"), InputBox("Password"))
         ElseIf (UploadBttn.Checked = True) Then
-
+            ftpModule.upload(filePathVar, "ftp://" + ftpAddrVar, fileNameVar, InputBox("Username"), InputBox("Password"))
         ElseIf (DeleteBttn.Checked = True) Then
-            ftpModule.delete("ftp://" + IPAddr.Text, fileNameVar, InputBox("Username"), InputBox("Password"))
+            ftpModule.delete("ftp://" + ftpAddrVar, fileNameVar, InputBox("Username"), InputBox("Password"))
         Else
             MsgBox("Please Select An Option", Title:="Error Information")
         End If
