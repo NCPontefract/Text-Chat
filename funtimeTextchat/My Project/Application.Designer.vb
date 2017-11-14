@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.funtimeTextchat.Login
+            Me.MainForm = Global.funtimeTextchat.InternetHandler
         End Sub
     End Class
 End Namespace

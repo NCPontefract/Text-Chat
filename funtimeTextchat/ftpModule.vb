@@ -15,25 +15,24 @@ Module ftpModule
         strFile.Dispose()
     End Function
 
-    Friend Function download(localStorage, ftpAddr, fileName) 'Download A File From FTP Site'
+    Friend Function download(localStorage As String, ftpAddr As String, fileName As String, username As String, password As String) 'Download A File From FTP Site'
         Try
-            Dim toDownload As String = (ftpAddr + "/" + fileName)
-            MsgBox(toDownload)
-            Dim wrDownload As FtpWebRequest = WebRequest.Create(toDownload) 'Create Request To Download File'
+            Dim toDownload As String = (ftpAddr + "/" + fileName) 'Complete string of what to downlaod
+            ' Debugging tool -> MsgBox(toDownload)
+            Dim wrDownload As FtpWebRequest = WebRequest.Create(toDownload) 'Create Request To Download File
 
-            wrDownload.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File'
-            'Specify Username & Password'
-            wrDownload.Credentials = New NetworkCredential("IEUser", "Passw0rd!")
-            Dim rDownloadResponse As FtpWebResponse = wrDownload.GetResponse() 'Response Object'
-            Dim strFileStream As Stream = rDownloadResponse.GetResponseStream() 'Incoming File Stream'
-            Dim srFile As StreamReader = New StreamReader(strFileStream) 'Read File Stream Data'
+            wrDownload.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File
+
+            wrDownload.Credentials = New NetworkCredential(username, password) 'Specify Username & Password
+            Dim rDownloadResponse As FtpWebResponse = wrDownload.GetResponse() 'Response Object
+            Dim strFileStream As Stream = rDownloadResponse.GetResponseStream() 'Incoming File Stream
+            Dim srFile As StreamReader = New StreamReader(strFileStream) 'Read File Stream Data
             Dim text As String = srFile.ReadToEnd
 
-            'Console.WriteLine(srFile.ReadToEnd())
-            Console.WriteLine("Download Complete, status {0}", rDownloadResponse.StatusDescription) 'Show Status Of Download'
-
+            Console.WriteLine("Download Complete, status {0}", rDownloadResponse.StatusDescription) 'Show Status Of Download
             File.WriteAllText(localStorage + "/" + fileName, text)
-            srFile.Close() 'Close
+
+            srFile.Close() 'Close streamReader
             rDownloadResponse.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -42,14 +41,19 @@ Module ftpModule
 
     End Function
 
-    Friend Function delete(ftpAddr, fileName) 'Delete File On FTP Server'
-        Dim todelete As String = (ftpAddr + "/" + fileName)
+    Friend Function delete(ftpAddr, fileName, usrName, password) 'Delete File On FTP Server'
+        Dim toDelete As String = (ftpAddr + "/" + fileName)
+        Try
+            Dim wrDelete As FtpWebRequest = CType(WebRequest.Create(toDelete), FtpWebRequest) 'Create Request To Delete File'
+            wrDelete.Credentials = New NetworkCredential(usrName.ToString, password.ToString) 'Specify Username & Password
+            wrDelete.Method = WebRequestMethods.Ftp.DeleteFile 'Specify That You Want To Delete A File'
+            Dim rDeleteResponse As FtpWebResponse = CType(wrDelete.GetResponse(), FtpWebResponse) 'Response Object'
+            Console.WriteLine("Delete status: {0}", rDeleteResponse.StatusDescription) 'Show Status Of Delete'
+            rDeleteResponse.Close() 'Close'
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
-        Dim wrDelete As FtpWebRequest = CType(WebRequest.Create(todelete), FtpWebRequest) 'Create Request To Delete File'
-        wrDelete.Method = WebRequestMethods.Ftp.DeleteFile 'Specify That You Want To Delete A File'
-        Dim rDeleteResponse As FtpWebResponse = CType(wrDelete.GetResponse(), FtpWebResponse) 'Response Object'
-        Console.WriteLine("Delete status: {0}", rDeleteResponse.StatusDescription) 'Show Status Of Delete'
-        rDeleteResponse.Close() 'Close'
 
     End Function
 End Module

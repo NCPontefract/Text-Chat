@@ -8,11 +8,11 @@
         ftpAddrVar = setIP.Text
     End Sub
 
-    Private Sub SetPath_Click(sender As Object, e As EventArgs) Handles SetPath.Click
+    Private Sub SetPath_Click(sender As Object, e As EventArgs) Handles SetFilePath.Click
         filePathVar = FilePathAddr.Text
     End Sub
 
-    Private Sub SetName_Click(sender As Object, e As EventArgs) Handles SetName.Click
+    Private Sub SetName_Click(sender As Object, e As EventArgs) Handles SetFileName.Click
         fileNameVar = FileName.Text
     End Sub
 
@@ -22,11 +22,11 @@
 
     Private Sub action_Click(sender As Object, e As EventArgs) Handles action.Click
         If (DownloadBttn.Checked = True) Then
-            ftpModule.download(DownloadLocation.Text, "ftp://" + IPAddr.Text, fileNameVar)
+            ftpModule.download(DownloadLocation.Text, "ftp://" + IPAddr.Text, fileNameVar, InputBox("Username"), InputBox("Password"))
         ElseIf (UploadBttn.Checked = True) Then
 
         ElseIf (DeleteBttn.Checked = True) Then
-
+            ftpModule.delete("ftp://" + IPAddr.Text, fileNameVar, InputBox("Username"), InputBox("Password"))
         Else
             MsgBox("Please Select An Option", Title:="Error Information")
         End If
@@ -34,13 +34,13 @@
 
     Private Sub DownloadBttn_CheckedChanged(sender As Object, e As EventArgs) Handles DownloadBttn.CheckedChanged
         FileName.Visible = True
-        SetName.Visible = True
+        SetFileName.Visible = True
         SetDownloadLocation.Visible = True
         DownloadLocation.Visible = True
         setIP.Visible = True
         IPAddr.Visible = True
 
-        SetPath.Visible = False
+        SetFilePath.Visible = False
         FilePathAddr.Visible = False
     End Sub
 
@@ -51,20 +51,24 @@
         FileName.Visible = True
         setIP.Visible = True
         IPAddr.Visible = True
-        SetPath.Visible = True
+        SetFilePath.Visible = True
         FilePathAddr.Visible = True
-        SetName.Visible = True
+        SetFileName.Visible = True
     End Sub
 
     Private Sub DeleteBttn_CheckedChanged(sender As Object, e As EventArgs) Handles DeleteBttn.CheckedChanged
         setIP.Visible = True
         IPAddr.Visible = True
-        SetName.Visible = True
+        SetFileName.Visible = True
         FileName.Visible = True
 
         SetDownloadLocation.Visible = False
         DownloadLocation.Visible = False
-        SetPath.Visible = False
+        SetFilePath.Visible = False
         FilePathAddr.Visible = False
+    End Sub
+
+    Private Sub InternetHandler_Close(sender As Object, e As EventArgs) Handles MyBase.Closed
+
     End Sub
 End Class

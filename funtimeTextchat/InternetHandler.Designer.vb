@@ -24,8 +24,8 @@ Partial Class InternetHandler
     Private Sub InitializeComponent()
         Me.action = New System.Windows.Forms.Button()
         Me.setIP = New System.Windows.Forms.Button()
-        Me.SetPath = New System.Windows.Forms.Button()
-        Me.SetName = New System.Windows.Forms.Button()
+        Me.SetFilePath = New System.Windows.Forms.Button()
+        Me.SetFileName = New System.Windows.Forms.Button()
         Me.IPAddr = New System.Windows.Forms.TextBox()
         Me.FilePathAddr = New System.Windows.Forms.TextBox()
         Me.FileName = New System.Windows.Forms.TextBox()
@@ -52,29 +52,29 @@ Partial Class InternetHandler
         Me.setIP.Name = "setIP"
         Me.setIP.Size = New System.Drawing.Size(168, 23)
         Me.setIP.TabIndex = 1
-        Me.setIP.Text = "Set IP Addr"
+        Me.setIP.Text = "Set IP Address and Port"
         Me.setIP.UseVisualStyleBackColor = True
         Me.setIP.Visible = False
         '
-        'SetPath
+        'SetFilePath
         '
-        Me.SetPath.Location = New System.Drawing.Point(12, 41)
-        Me.SetPath.Name = "SetPath"
-        Me.SetPath.Size = New System.Drawing.Size(168, 23)
-        Me.SetPath.TabIndex = 2
-        Me.SetPath.Text = "Set FileAddrDir"
-        Me.SetPath.UseVisualStyleBackColor = True
-        Me.SetPath.Visible = False
+        Me.SetFilePath.Location = New System.Drawing.Point(12, 41)
+        Me.SetFilePath.Name = "SetFilePath"
+        Me.SetFilePath.Size = New System.Drawing.Size(168, 23)
+        Me.SetFilePath.TabIndex = 2
+        Me.SetFilePath.Text = "Set Folder"
+        Me.SetFilePath.UseVisualStyleBackColor = True
+        Me.SetFilePath.Visible = False
         '
-        'SetName
+        'SetFileName
         '
-        Me.SetName.Location = New System.Drawing.Point(12, 70)
-        Me.SetName.Name = "SetName"
-        Me.SetName.Size = New System.Drawing.Size(168, 23)
-        Me.SetName.TabIndex = 3
-        Me.SetName.Text = "Set FileName+Type"
-        Me.SetName.UseVisualStyleBackColor = True
-        Me.SetName.Visible = False
+        Me.SetFileName.Location = New System.Drawing.Point(12, 70)
+        Me.SetFileName.Name = "SetFileName"
+        Me.SetFileName.Size = New System.Drawing.Size(168, 23)
+        Me.SetFileName.TabIndex = 3
+        Me.SetFileName.Text = "Set File Name + Type"
+        Me.SetFileName.UseVisualStyleBackColor = True
+        Me.SetFileName.Visible = False
         '
         'IPAddr
         '
@@ -139,7 +139,7 @@ Partial Class InternetHandler
         Me.SetDownloadLocation.Name = "SetDownloadLocation"
         Me.SetDownloadLocation.Size = New System.Drawing.Size(168, 23)
         Me.SetDownloadLocation.TabIndex = 10
-        Me.SetDownloadLocation.Text = "SetDownloadFolder"
+        Me.SetDownloadLocation.Text = "Set Download Folder"
         Me.SetDownloadLocation.UseVisualStyleBackColor = True
         Me.SetDownloadLocation.Visible = False
         '
@@ -155,6 +155,7 @@ Partial Class InternetHandler
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(386, 175)
         Me.Controls.Add(Me.DownloadLocation)
         Me.Controls.Add(Me.SetDownloadLocation)
@@ -164,10 +165,12 @@ Partial Class InternetHandler
         Me.Controls.Add(Me.FileName)
         Me.Controls.Add(Me.FilePathAddr)
         Me.Controls.Add(Me.IPAddr)
-        Me.Controls.Add(Me.SetName)
-        Me.Controls.Add(Me.SetPath)
+        Me.Controls.Add(Me.SetFileName)
+        Me.Controls.Add(Me.SetFilePath)
         Me.Controls.Add(Me.setIP)
         Me.Controls.Add(Me.action)
+        Me.MaximumSize = New System.Drawing.Size(402, 214)
+        Me.MinimumSize = New System.Drawing.Size(402, 214)
         Me.Name = "InternetHandler"
         Me.Text = "InternetHandler"
         Me.ResumeLayout(False)
@@ -177,8 +180,8 @@ Partial Class InternetHandler
 
     Friend WithEvents action As Button
     Friend WithEvents setIP As Button
-    Friend WithEvents SetPath As Button
-    Friend WithEvents SetName As Button
+    Friend WithEvents SetFilePath As Button
+    Friend WithEvents SetFileName As Button
     Friend WithEvents IPAddr As TextBox
     Friend WithEvents FilePathAddr As TextBox
     Friend WithEvents FileName As TextBox
