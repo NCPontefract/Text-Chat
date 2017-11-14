@@ -54,6 +54,7 @@ Partial Class InternetHandler
         Me.setIP.TabIndex = 1
         Me.setIP.Text = "Set IP Addr"
         Me.setIP.UseVisualStyleBackColor = True
+        Me.setIP.Visible = False
         '
         'SetPath
         '
@@ -63,6 +64,7 @@ Partial Class InternetHandler
         Me.SetPath.TabIndex = 2
         Me.SetPath.Text = "Set FileAddrDir"
         Me.SetPath.UseVisualStyleBackColor = True
+        Me.SetPath.Visible = False
         '
         'SetName
         '
@@ -72,6 +74,7 @@ Partial Class InternetHandler
         Me.SetName.TabIndex = 3
         Me.SetName.Text = "Set FileName+Type"
         Me.SetName.UseVisualStyleBackColor = True
+        Me.SetName.Visible = False
         '
         'IPAddr
         '
@@ -79,6 +82,7 @@ Partial Class InternetHandler
         Me.IPAddr.Name = "IPAddr"
         Me.IPAddr.Size = New System.Drawing.Size(188, 20)
         Me.IPAddr.TabIndex = 4
+        Me.IPAddr.Visible = False
         '
         'FilePathAddr
         '
@@ -86,6 +90,7 @@ Partial Class InternetHandler
         Me.FilePathAddr.Name = "FilePathAddr"
         Me.FilePathAddr.Size = New System.Drawing.Size(188, 20)
         Me.FilePathAddr.TabIndex = 5
+        Me.FilePathAddr.Visible = False
         '
         'FileName
         '
@@ -93,6 +98,7 @@ Partial Class InternetHandler
         Me.FileName.Name = "FileName"
         Me.FileName.Size = New System.Drawing.Size(188, 20)
         Me.FileName.TabIndex = 6
+        Me.FileName.Visible = False
         '
         'DownloadBttn
         '
@@ -135,6 +141,7 @@ Partial Class InternetHandler
         Me.SetDownloadLocation.TabIndex = 10
         Me.SetDownloadLocation.Text = "SetDownloadFolder"
         Me.SetDownloadLocation.UseVisualStyleBackColor = True
+        Me.SetDownloadLocation.Visible = False
         '
         'DownloadLocation
         '
@@ -142,6 +149,7 @@ Partial Class InternetHandler
         Me.DownloadLocation.Name = "DownloadLocation"
         Me.DownloadLocation.Size = New System.Drawing.Size(188, 20)
         Me.DownloadLocation.TabIndex = 11
+        Me.DownloadLocation.Visible = False
         '
         'InternetHandler
         '
