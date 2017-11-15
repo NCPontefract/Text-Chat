@@ -40,6 +40,7 @@ Module ftpModule
 
             srFile.Close() 'Close streamReader
             rDownloadResponse.Close()
+            Return True
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
