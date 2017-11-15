@@ -80,10 +80,22 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ftpModule.vb" />
+    <Compile Include="internetChatform.Designer.vb">
+      <DependentUpon>internetChatform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="internetChatform.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InternetHandler.Designer.vb">
       <DependentUpon>InternetHandler.vb</DependentUpon>
     </Compile>
     <Compile Include="InternetHandler.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="internetValidation.Designer.vb">
+      <DependentUpon>internetValidation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="internetValidation.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
@@ -115,8 +127,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="internetChatform.resx">
+      <DependentUpon>internetChatform.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InternetHandler.resx">
       <DependentUpon>InternetHandler.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="internetValidation.resx">
+      <DependentUpon>internetValidation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

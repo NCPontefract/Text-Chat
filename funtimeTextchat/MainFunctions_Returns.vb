@@ -25,7 +25,7 @@ Module MainFunctions_Returns
 
                     If userFound = True Then
                         'Found!
-                        setNickname(name)
+                        'setNickname(name)
                         Return True
                     Else
                         MsgBox("Sorry, incorrect username or password detected. Please try again.", MsgBoxStyle.OkOnly, "Invalid Login")
@@ -37,8 +37,9 @@ Module MainFunctions_Returns
                     Login.UsernameTextBox.Text = ""
                     Login.PasswordTextBox.Text = ""
                 End If
-            Else
-                nickname = setNickname(name) 'internet selected
+            Else 'Internet Selected
+                internetValidation.Show()
+                internetChatform.nickname = name
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -50,10 +51,6 @@ Module MainFunctions_Returns
 
     End Function
 
-    Friend Function setNickname(name As String)
-        Login.nickname = name
-
-    End Function
 
     Friend Function checkSQL(input)
         Dim flagged As Boolean = False

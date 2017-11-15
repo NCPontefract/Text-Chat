@@ -29,7 +29,6 @@ Module ftpModule
             Dim wrDownload As FtpWebRequest = WebRequest.Create(toDownload) 'Create Request To Download File
 
             wrDownload.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File
-
             wrDownload.Credentials = New NetworkCredential(username, password) 'Specify Username & Password
             Dim rDownloadResponse As FtpWebResponse = wrDownload.GetResponse() 'Response Object
             Dim strFileStream As Stream = rDownloadResponse.GetResponseStream() 'Incoming File Stream
@@ -61,6 +60,50 @@ Module ftpModule
             MsgBox(ex.Message)
         End Try
 
+    End Function
+
+    Friend Function verify(localFileAddr, ftpAddr, fileName, username, password) 'Verifying FTP Addr
+        Try
+            'ftpModule.verify(Application.StartupPath + "/testingItems", IP_Address, "verify.txt", username, password
+            'Create Request To Upload File'
+            Dim wrUpload As FtpWebRequest = DirectCast(WebRequest.Create(ftpAddr + "/" + fileName), FtpWebRequest)
+
+            wrUpload.Method = WebRequestMethods.Ftp.UploadFile 'Start Upload Process'
+            wrUpload.Credentials = New NetworkCredential(username.ToString, password.ToString) 'Specify Username & Password
+            Dim btfile() As Byte = File.ReadAllBytes(localFileAddr + "\" + fileName) 'Locate File And Store It In Byte Array'
+            Dim strFile As Stream = wrUpload.GetRequestStream() 'Get File'
+            strFile.Write(btfile, 0, btfile.Length) 'Upload Each Byte'
+
+            strFile.Close()
+            strFile.Dispose()
+            Return True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+        Dim toDelete As String = (ftpAddr + "/" + fileName)
+        Try
+            Dim wrDelete As FtpWebRequest = CType(WebRequest.Create(toDelete), FtpWebRequest) 'Create Request To Delete File'
+            wrDelete.Credentials = New NetworkCredential(username.ToString, password.ToString) 'Specify Username & Password
+            wrDelete.Method = WebRequestMethods.Ftp.DeleteFile 'Specify That You Want To Delete A File'
+            Dim rDeleteResponse As FtpWebResponse = CType(wrDelete.GetResponse(), FtpWebResponse) 'Response Object'
+            Console.WriteLine("Delete status: {0}", rDeleteResponse.StatusDescription) 'Show Status Of Delete'
+            rDeleteResponse.Close() 'Close'
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Function
+
+
+    Friend Function create(localFilePathToUpload, ftpAddress, filename, username, password) ' If not detected on ftp site
+        filename = filename + ".txt"
+        Using sw As FileStream = File.Create(localFilePathToUpload + "/" + filename)
+        End Using
+        upload(localFilePathToUpload, "ftp://" + ftpAddress, filename, username, password)
+
+        File.Delete(localFilePathToUpload + "/" + filename)
+
+        MainFunctions_NoReturns.writeToElementFromCreation("internet", "")
 
     End Function
 End Module

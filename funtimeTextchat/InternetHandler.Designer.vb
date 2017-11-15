@@ -34,12 +34,13 @@ Partial Class InternetHandler
         Me.DeleteBttn = New System.Windows.Forms.RadioButton()
         Me.SetDownloadLocation = New System.Windows.Forms.Button()
         Me.DownloadLocation = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'action
         '
         Me.action.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.action.Location = New System.Drawing.Point(0, 152)
+        Me.action.Location = New System.Drawing.Point(0, 153)
         Me.action.Name = "action"
         Me.action.Size = New System.Drawing.Size(386, 23)
         Me.action.TabIndex = 0
@@ -151,12 +152,22 @@ Partial Class InternetHandler
         Me.DownloadLocation.TabIndex = 11
         Me.DownloadLocation.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 126)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(50, 23)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Testing"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'InternetHandler
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(386, 175)
+        Me.ClientSize = New System.Drawing.Size(386, 176)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DownloadLocation)
         Me.Controls.Add(Me.SetDownloadLocation)
         Me.Controls.Add(Me.DeleteBttn)
@@ -190,4 +201,5 @@ Partial Class InternetHandler
     Friend WithEvents DeleteBttn As RadioButton
     Friend WithEvents SetDownloadLocation As Button
     Friend WithEvents DownloadLocation As TextBox
+    Friend WithEvents Button1 As Button
 End Class

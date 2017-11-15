@@ -43,10 +43,22 @@ Public Class Login
     Private Sub Lan_CheckedChanged_1(sender As Object, e As EventArgs) Handles Lan.CheckedChanged
         RoomLabel.Visible = True
         RoomTextBox.Visible = True
+        UsernameLabel.Visible = True
+        UsernameTextBox.Visible = True
+        PasswordLabel.Visible = True
+        PasswordTextBox.Visible = True
     End Sub
 
     Private Sub Internet_CheckedChanged_1(sender As Object, e As EventArgs) Handles Internet.CheckedChanged
         RoomLabel.Visible = False
         RoomTextBox.Visible = False
+        PasswordLabel.Visible = False
+        PasswordTextBox.Visible = False
+        UsernameTextBox.Visible = True
+        UsernameLabel.Visible = True
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        InternetHandler.Show()
     End Sub
 End Class

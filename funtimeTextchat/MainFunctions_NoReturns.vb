@@ -17,4 +17,14 @@
         Form1.MessageBoard.AppendText(Form1.MessageInput.Text + Environment.NewLine)
         Form1.MessageInput.Text = ""
     End Function
+    Friend Function writeToElementFromCreation(calledFrom, downloadStream)
+        Dim newText
+        If (calledFrom = "internet") Then
+            'Update element procedure for internetChatroom
+            internetChatform.outputBox.Text = ""
+            internetChatform.outputBox.Text = downloadStream
+        Else
+            'Update element procedure for lanChatroom
+        End If
+    End Function
 End Module

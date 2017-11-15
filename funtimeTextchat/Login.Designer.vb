@@ -42,6 +42,7 @@ Partial Class Login
         Me.Internet = New System.Windows.Forms.RadioButton()
         Me.RoomLabel = New System.Windows.Forms.Label()
         Me.RoomTextBox = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -62,6 +63,7 @@ Partial Class Login
         Me.UsernameLabel.TabIndex = 0
         Me.UsernameLabel.Text = "&User name"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.UsernameLabel.Visible = False
         '
         'PasswordLabel
         '
@@ -71,6 +73,7 @@ Partial Class Login
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "&Password"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.PasswordLabel.Visible = False
         '
         'UsernameTextBox
         '
@@ -78,6 +81,7 @@ Partial Class Login
         Me.UsernameTextBox.Name = "UsernameTextBox"
         Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
         Me.UsernameTextBox.TabIndex = 1
+        Me.UsernameTextBox.Visible = False
         '
         'PasswordTextBox
         '
@@ -86,6 +90,7 @@ Partial Class Login
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
         Me.PasswordTextBox.TabIndex = 3
+        Me.PasswordTextBox.Visible = False
         '
         'OK
         '
@@ -144,6 +149,15 @@ Partial Class Login
         Me.RoomTextBox.TabIndex = 3
         Me.RoomTextBox.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(320, 135)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Demo"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Login
         '
         Me.AcceptButton = Me.OK
@@ -152,6 +166,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 192)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Internet)
         Me.Controls.Add(Me.Lan)
         Me.Controls.Add(Me.Cancel)
@@ -180,4 +195,5 @@ Partial Class Login
     Friend WithEvents Internet As RadioButton
     Friend WithEvents RoomLabel As Label
     Friend WithEvents RoomTextBox As TextBox
+    Friend WithEvents Button1 As Button
 End Class
