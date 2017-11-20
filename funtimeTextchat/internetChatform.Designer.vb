@@ -30,7 +30,7 @@ Partial Class internetChatform
         Me.outputBox = New System.Windows.Forms.RichTextBox()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.send = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Updater = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Button1
@@ -93,10 +93,9 @@ Partial Class internetChatform
         Me.send.Text = "Send"
         Me.send.UseVisualStyleBackColor = True
         '
-        'Timer1
+        'Updater
         '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
+        Me.Updater.Interval = 1000
         '
         'internetChatform
         '
@@ -124,5 +123,5 @@ Partial Class internetChatform
     Friend WithEvents outputBox As RichTextBox
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents send As Button
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Updater As Timer
 End Class

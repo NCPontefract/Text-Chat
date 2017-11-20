@@ -53,6 +53,7 @@ Partial Class Form1
         '
         Me.MessageBoard.Location = New System.Drawing.Point(12, 42)
         Me.MessageBoard.Name = "MessageBoard"
+        Me.MessageBoard.ReadOnly = True
         Me.MessageBoard.Size = New System.Drawing.Size(456, 525)
         Me.MessageBoard.TabIndex = 2
         Me.MessageBoard.Text = ""

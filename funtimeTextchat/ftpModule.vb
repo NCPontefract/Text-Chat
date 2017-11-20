@@ -135,6 +135,40 @@ Module ftpModule
             MsgBox(ex.Message)
         End Try
 
+    End Function
+
+    Friend Function checkForUpdate(localStorage As String, ftpAddr As String, fileName As String, username As String, password As String)
+
+        Try
+            Dim currentDisp As String = internetChatform.outputBox.Text
+            Dim toDownload As String = (ftpAddr + "/" + fileName)
+            Dim wrDownload As FtpWebRequest = WebRequest.Create(toDownload)
+
+            wrDownload.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File
+            wrDownload.Credentials = New NetworkCredential(username, password) 'Specify Username & Password
+            Dim rDownloadResponse As FtpWebResponse = wrDownload.GetResponse() 'Response Object
+            Dim strFileStream As Stream = rDownloadResponse.GetResponseStream() 'Incoming File Stream
+            Dim srFile As StreamReader = New StreamReader(strFileStream) 'Read File Stream Data
+            Dim content As String = srFile.ReadToEnd
+            srFile.Close() 'Close streamReader
+            rDownloadResponse.Close()
+
+
+            If (content = currentDisp) Then
+                Return False
+            Else
+                Return True
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
 
     End Function
+
+    Friend Function refresh()
+
+    End Function
+
 End Module

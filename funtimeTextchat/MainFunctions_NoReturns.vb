@@ -21,6 +21,7 @@ Module MainFunctions_NoReturns
     End Function
     Friend Function joinInternet()
         internetChatform.outputBox.Text = ftpModule.read("ftp://" + internetValidation.IP_Address, internetChatform.TextBox1.Text + ".txt", internetValidation.username, internetValidation.password, "internet") 'do read from download
+        internetChatform.Updater.Enabled = True
     End Function
 
 
