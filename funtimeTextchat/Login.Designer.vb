@@ -89,7 +89,7 @@ Partial Class Login
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
-        Me.PasswordTextBox.TabIndex = 3
+        Me.PasswordTextBox.TabIndex = 2
         Me.PasswordTextBox.Visible = False
         '
         'OK

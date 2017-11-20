@@ -1,4 +1,6 @@
 ﻿Imports System.Data.OleDb
+Imports System.IO
+
 Module MainFunctions_Returns
     Friend Function loginProcedure(type As String, name As String, password As String)
         Dim provider, datafile, connectionstring, nickname
@@ -70,5 +72,37 @@ Module MainFunctions_Returns
             i = i + 1
         Next
         Return False
+    End Function
+
+    Friend Function checkLanTextChange(path, currentText)
+        Dim oldText As String = currentText
+        Dim newText As String
+        Dim file As String = path
+        Dim srFile As StreamReader = New StreamReader(Application.StartupPath + "/LocalRooms/" + Form1.RoomID.Text + ".txt") 'Read File Stream Data
+        Dim text As String = srFile.ReadToEnd
+        srFile.Close()
+        newText = text
+
+        If (oldText = newText) Then
+            Return False
+            'they're the same
+        Else
+            Return True
+        End If
+
+    End Function
+    Friend Function writeLanRoom(toSend, name) 'updates local only
+
+        Dim srFile As StreamReader = New StreamReader(Application.StartupPath + "/LocalRooms/" + Form1.RoomID.Text + ".txt")
+        Dim old As String = srFile.ReadToEnd 'current display
+        srFile.Close()
+
+        Dim newer As String = toSend 'send box text
+        Dim newBoard As String = newer + old 'both in right order
+
+        Dim swFile As StreamWriter = New StreamWriter(Application.StartupPath + "/LocalRooms/" + Form1.RoomID.Text + ".txt") 'Read File Stream Data
+        swFile.Write(Environment.NewLine + name + ": " + newBoard) 'writes to new file
+        swFile.Close()
+
     End Function
 End Module

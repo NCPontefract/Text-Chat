@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Join = New System.Windows.Forms.Button()
         Me.RoomID = New System.Windows.Forms.TextBox()
         Me.MessageBoard = New System.Windows.Forms.RichTextBox()
@@ -29,6 +30,7 @@ Partial Class Form1
         Me.MessageInput = New System.Windows.Forms.RichTextBox()
         Me.Leave = New System.Windows.Forms.Button()
         Me.Logout = New System.Windows.Forms.Button()
+        Me.updateTimer = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Join
@@ -49,7 +51,6 @@ Partial Class Form1
         '
         'MessageBoard
         '
-        Me.MessageBoard.Enabled = False
         Me.MessageBoard.Location = New System.Drawing.Point(12, 42)
         Me.MessageBoard.Name = "MessageBoard"
         Me.MessageBoard.Size = New System.Drawing.Size(456, 525)
@@ -91,6 +92,9 @@ Partial Class Form1
         Me.Logout.Text = "Logout"
         Me.Logout.UseVisualStyleBackColor = True
         '
+        'updateTimer
+        '
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -117,4 +121,5 @@ Partial Class Form1
     Friend WithEvents MessageInput As RichTextBox
     Friend WithEvents Leave As Button
     Friend WithEvents Logout As Button
+    Friend WithEvents updateTimer As Timer
 End Class

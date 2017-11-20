@@ -1,8 +1,7 @@
 Public Class Login
     Friend nickname As String
     Friend groupID As String
-    Friend ipAddr As String
-    Friend portNo As String
+
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
 
@@ -10,13 +9,15 @@ Public Class Login
             If (loginProcedure("LAN", UsernameTextBox.Text, PasswordTextBox.Text) And RoomTextBox.Text IsNot "") = True Then
                 Form1.Show()
                 groupID = RoomTextBox.Text
-                Me.Hide()
-                InternetHandler.Show()
+                nickname = Me.UsernameTextBox.Text
+                Form1.room = groupID
+                Form1.RoomID.Text = groupID
+                Form1.nick = nickname
+                Me.Close()
+                'InternetHandler.Show()
             End If
         ElseIf (Internet.Checked = True) Then
             loginProcedure("Internet", UsernameTextBox.Text, PasswordTextBox.Text)
-            ipAddr = "TODO"
-            portNo = "TODO"
         Else
             MsgBox("Please Select A Login Method (LAN / Internet)", Title:="Error Information")
         End If
