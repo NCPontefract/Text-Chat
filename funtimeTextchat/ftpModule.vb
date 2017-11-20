@@ -120,8 +120,10 @@ Module ftpModule
                 Dim srFile As StreamReader = New StreamReader(strFileStream) 'Read File Stream Data
                 Dim text As String = srFile.ReadToEnd
 
+                'Console.WriteLine(text)
+                Return text
                 Console.WriteLine("Download Complete, status {0}", rDownloadResponse.StatusDescription) 'Show Status Of Download
-                internetChatform.outputBox.Text = text
+                'internetChatform.outputBox.Text = text
 
                 srFile.Close() 'Close streamReader
                 rDownloadResponse.Close()

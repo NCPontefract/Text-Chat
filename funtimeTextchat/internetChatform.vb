@@ -14,6 +14,8 @@ Public Class internetChatform
         Else 'doesn't exist
             ftpModule.create(Application.StartupPath + "/InternetRooms", internetValidation.IP_Address, TextBox1.Text, internetValidation.username, internetValidation.password)
             MsgBox("Room Created")
+            MainFunctions_NoReturns.joinInternet()
+
             'join
         End If
     End Sub
