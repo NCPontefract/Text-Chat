@@ -23,8 +23,8 @@ Partial Class internetChatform
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.join = New System.Windows.Forms.Button()
+        Me.leave = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.outputBox = New System.Windows.Forms.RichTextBox()
@@ -33,23 +33,23 @@ Partial Class internetChatform
         Me.Updater = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
-        'Button1
+        'join
         '
-        Me.Button1.Location = New System.Drawing.Point(167, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Join"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.join.Location = New System.Drawing.Point(167, 10)
+        Me.join.Name = "join"
+        Me.join.Size = New System.Drawing.Size(75, 23)
+        Me.join.TabIndex = 0
+        Me.join.Text = "Join"
+        Me.join.UseVisualStyleBackColor = True
         '
-        'Button2
+        'leave
         '
-        Me.Button2.Location = New System.Drawing.Point(248, 10)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Leave"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.leave.Location = New System.Drawing.Point(248, 10)
+        Me.leave.Name = "leave"
+        Me.leave.Size = New System.Drawing.Size(75, 23)
+        Me.leave.TabIndex = 1
+        Me.leave.Text = "Leave"
+        Me.leave.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -107,8 +107,8 @@ Partial Class internetChatform
         Me.Controls.Add(Me.outputBox)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.leave)
+        Me.Controls.Add(Me.join)
         Me.Name = "internetChatform"
         Me.Text = "Chatroom"
         Me.ResumeLayout(False)
@@ -116,8 +116,8 @@ Partial Class internetChatform
 
     End Sub
 
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents join As Button
+    Friend WithEvents leave As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents outputBox As RichTextBox
