@@ -158,6 +158,7 @@ Module ftpModule
                 Return False
             Else
                 Return True
+                refresh(content)
             End If
 
         Catch ex As Exception
@@ -167,8 +168,9 @@ Module ftpModule
 
     End Function
 
-    Friend Function refresh()
-
+    Friend Function refresh(newText)
+        'Refreshes the form
+        internetChatform.outputBox.Text = newText
     End Function
 
 End Module

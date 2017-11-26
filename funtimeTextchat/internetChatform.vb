@@ -32,10 +32,9 @@ Public Class internetChatform
 
     Private Sub Updater_Tick(sender As Object, e As EventArgs) Handles Updater.Tick
 
-        If (ftpModule.checkForUpdate(Application.StartupPath + "/InternetRooms/", "ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password) = True) Then
-            ftpModule.refresh()
-            MsgBox("Difference!")
-        End If
+        ftpModule.checkForUpdate(Application.StartupPath + "/InternetRooms/", "ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password)
+        'ftpModule.refresh()
+        'MsgBox("Difference!")
 
     End Sub
 
