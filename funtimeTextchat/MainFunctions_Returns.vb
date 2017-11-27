@@ -2,8 +2,8 @@
 Imports System.IO
 
 Module MainFunctions_Returns
-    Friend Function loginProcedure(type As String, name As String, password As String)
-        Dim provider, datafile, connectionstring, nickname
+    Friend Function loginProcedure(type As String, name As String, password As String, nickname As String)
+        Dim provider, datafile, connectionstring
         Dim myConnection As OleDbConnection
         provider = "provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
         datafile = Application.StartupPath + "\LanUsers.accdb"
@@ -41,7 +41,7 @@ Module MainFunctions_Returns
                 End If
             Else 'Internet Selected
                 internetValidation.Show()
-                internetChatform.nickname = name
+                internetValidation.nickname = nickname
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

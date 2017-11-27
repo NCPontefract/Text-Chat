@@ -4,10 +4,12 @@
     Friend username
     Friend password
     Friend portNo
+    Friend nickname
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'Pass variables to main Internet chat form
         internetChatform.Show()
+        internetChatform.nickname = nickname
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

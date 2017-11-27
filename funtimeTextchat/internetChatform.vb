@@ -40,5 +40,24 @@ Public Class internetChatform
 
     Private Sub send_Click(sender As Object, e As EventArgs) Handles send.Click
 
+        Me.Updater.Enabled = False
+            'Manually refresh outputBox
+            ftpModule.refresh(ftpModule.checkForUpdate(Application.StartupPath + "/InternetRooms/", "ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password))
+            Dim toAppend
+            Dim content
+
+        content = ftpModule.read("ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password, "internet")
+        toAppend = RichTextBox1.Text
+        content = toAppend + content
+
+        Dim sw As StreamWriter = New StreamWriter(Application.StartupPath + "/tempFiles/" + TextBox1.Text + ".txt")
+        sw.Write(Environment.NewLine + nickname + ": " + content) 'writes to new file
+        sw.Close()
+
+        ftpModule.upload(Application.StartupPath + "/tempFiles/", "ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password)
+        File.Delete(Application.StartupPath + "/tempFiles/" + TextBox1.Text + ".txt")
+
+        Me.Updater.Enabled = True
+
     End Sub
 End Class

@@ -6,7 +6,7 @@ Public Class Login
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
 
         If (Lan.Checked = True) Then
-            If (loginProcedure("LAN", UsernameTextBox.Text, PasswordTextBox.Text) And RoomTextBox.Text IsNot "") = True Then
+            If (loginProcedure("LAN", UsernameTextBox.Text, PasswordTextBox.Text, "") And RoomTextBox.Text IsNot "") = True Then
                 Form1.Show()
                 groupID = RoomTextBox.Text
                 nickname = Me.UsernameTextBox.Text
@@ -17,7 +17,9 @@ Public Class Login
                 'InternetHandler.Show()
             End If
         ElseIf (Internet.Checked = True) Then
-            loginProcedure("Internet", UsernameTextBox.Text, PasswordTextBox.Text)
+            nickname = UsernameTextBox.Text
+            MainFunctions_Returns.loginProcedure("Internet", UsernameTextBox.Text, PasswordTextBox.Text, nickname)
+            Me.Close()
         Else
             MsgBox("Please Select A Login Method (LAN / Internet)", Title:="Error Information")
         End If

@@ -155,9 +155,10 @@ Module ftpModule
 
 
             If (content = currentDisp) Then
-                Return False
+                'Return False
+
             Else
-                Return True
+                'Return True
                 refresh(content)
             End If
 
