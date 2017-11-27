@@ -24,10 +24,21 @@ Public Class internetChatform
             leave.Enabled = True
             RichTextBox1.Enabled = True
         End If
+        Me.TextBox1.ReadOnly = True
+        Me.join.Enabled = False
+        Me.leave.Enabled = True
+        Me.RichTextBox1.Enabled = True
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles leave.Click 'LEAVE
         Me.Updater.Enabled = False
+        Me.TextBox1.ReadOnly = False
+        Me.outputBox.Text = ""
+        Me.RichTextBox1.Text = ""
+        Me.send.Enabled = False
+        Me.join.Enabled = True
+        Me.leave.Enabled = False
+        Me.RichTextBox1.Enabled = False
     End Sub
 
     Private Sub Updater_Tick(sender As Object, e As EventArgs) Handles Updater.Tick

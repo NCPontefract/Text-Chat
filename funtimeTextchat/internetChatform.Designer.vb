@@ -44,6 +44,7 @@ Partial Class internetChatform
         '
         'leave
         '
+        Me.leave.Enabled = False
         Me.leave.Location = New System.Drawing.Point(248, 10)
         Me.leave.Name = "leave"
         Me.leave.Size = New System.Drawing.Size(75, 23)
