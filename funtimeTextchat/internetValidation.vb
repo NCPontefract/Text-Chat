@@ -1,4 +1,5 @@
-﻿Public Class internetValidation
+﻿Imports System.Net.Sockets
+Public Class internetValidation
 
     Friend IP_Address
     Friend username
@@ -28,7 +29,7 @@
             MsgBox("Connection Successful!")
             Button2.Enabled = True
         Else
-            MsgBox("Connection Failed")
+            MsgBox("Connection Failed, check IP address and firewall rules (FTP Port 21 / Specified port)")
         End If
 
     End Sub
