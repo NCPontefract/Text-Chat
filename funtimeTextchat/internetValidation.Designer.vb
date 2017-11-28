@@ -83,14 +83,14 @@ Partial Class internetValidation
         Me.Password_Textbox.Location = New System.Drawing.Point(64, 59)
         Me.Password_Textbox.Name = "Password_Textbox"
         Me.Password_Textbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Password_Textbox.Size = New System.Drawing.Size(100, 20)
+        Me.Password_Textbox.Size = New System.Drawing.Size(178, 20)
         Me.Password_Textbox.TabIndex = 2
         '
         'Username_Textbox
         '
         Me.Username_Textbox.Location = New System.Drawing.Point(64, 33)
         Me.Username_Textbox.Name = "Username_Textbox"
-        Me.Username_Textbox.Size = New System.Drawing.Size(100, 20)
+        Me.Username_Textbox.Size = New System.Drawing.Size(178, 20)
         Me.Username_Textbox.TabIndex = 1
         '
         'portTextbox
@@ -103,7 +103,7 @@ Partial Class internetValidation
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(7, 85)
+        Me.Button1.Location = New System.Drawing.Point(250, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
@@ -113,7 +113,7 @@ Partial Class internetValidation
         'Button2
         '
         Me.Button2.Enabled = False
-        Me.Button2.Location = New System.Drawing.Point(88, 85)
+        Me.Button2.Location = New System.Drawing.Point(250, 32)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
@@ -122,7 +122,7 @@ Partial Class internetValidation
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(169, 85)
+        Me.Button3.Location = New System.Drawing.Point(250, 59)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 5
@@ -133,7 +133,7 @@ Partial Class internetValidation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(252, 115)
+        Me.ClientSize = New System.Drawing.Size(337, 87)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)

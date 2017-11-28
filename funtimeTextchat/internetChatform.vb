@@ -6,6 +6,7 @@ Public Class internetChatform
         send.Enabled = False
         leave.Enabled = False
         RichTextBox1.Enabled = False
+        Me.AcceptButton = join
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles join.Click 'JOIN
@@ -28,6 +29,7 @@ Public Class internetChatform
         Me.join.Enabled = False
         Me.leave.Enabled = True
         Me.RichTextBox1.Enabled = True
+        Me.AcceptButton = send
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles leave.Click 'LEAVE
@@ -39,6 +41,7 @@ Public Class internetChatform
         Me.join.Enabled = True
         Me.leave.Enabled = False
         Me.RichTextBox1.Enabled = False
+        Me.AcceptButton = send
     End Sub
 
     Private Sub Updater_Tick(sender As Object, e As EventArgs) Handles Updater.Tick
@@ -70,5 +73,14 @@ Public Class internetChatform
 
         Me.Updater.Enabled = True
 
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        internetValidation.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub me_close() Handles MyBase.Closing
+        internetValidation.Show()
     End Sub
 End Class
