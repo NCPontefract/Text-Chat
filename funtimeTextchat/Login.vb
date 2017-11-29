@@ -31,10 +31,6 @@ Public Class Login
         Me.Close()
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Internet_CheckedChanged(sender As Object, e As EventArgs) Handles Internet.Click
 
     End Sub
@@ -63,6 +59,10 @@ Public Class Login
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         InternetHandler.Show()
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SideFunctions.checkDir(Application.StartupPath)
     End Sub
 
 End Class
