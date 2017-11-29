@@ -19,7 +19,7 @@ Public Class internetChatform
             RichTextBox1.Enabled = True
         Else 'doesn't exist
             ftpModule.create(Application.StartupPath + "/InternetRooms", internetValidation.IP_Address, TextBox1.Text, internetValidation.username, internetValidation.password)
-            MsgBox("Room Created") 'DEBUGGING
+            MsgBox("Room Created", Title:="Information") 'DEBUGGING
             MainFunctions_NoReturns.joinInternet()
             send.Enabled = True
             leave.Enabled = True
@@ -55,10 +55,10 @@ Public Class internetChatform
     Private Sub send_Click(sender As Object, e As EventArgs) Handles send.Click
 
         Me.Updater.Enabled = False
-            'Manually refresh outputBox
-            ftpModule.refresh(ftpModule.checkForUpdate(Application.StartupPath + "/InternetRooms/", "ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password))
-            Dim toAppend
-            Dim content
+        'Manually refresh outputBox
+        ftpModule.refresh(ftpModule.checkForUpdate(Application.StartupPath + "/InternetRooms/", "ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password))
+        Dim toAppend
+        Dim content
 
         content = ftpModule.read("ftp://" + internetValidation.IP_Address, TextBox1.Text + ".txt", internetValidation.username, internetValidation.password, "internet")
         toAppend = RichTextBox1.Text
@@ -72,7 +72,7 @@ Public Class internetChatform
         File.Delete(Application.StartupPath + "/tempFiles/" + TextBox1.Text + ".txt")
 
         Me.Updater.Enabled = True
-
+        Me.RichTextBox1.Text = ""
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click

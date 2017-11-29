@@ -133,6 +133,7 @@ Partial Class internetValidation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(337, 87)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -145,6 +146,8 @@ Partial Class internetValidation
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.MaximumSize = New System.Drawing.Size(353, 126)
+        Me.MinimumSize = New System.Drawing.Size(353, 126)
         Me.Name = "internetValidation"
         Me.Text = "Connection Settings"
         Me.ResumeLayout(False)

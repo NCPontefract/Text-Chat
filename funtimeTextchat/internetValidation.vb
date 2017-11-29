@@ -29,7 +29,7 @@ Public Class internetValidation
             MsgBox("Connection Successful!")
             Button2.Enabled = True
         Else
-            MsgBox("Connection Failed, check IP address and firewall rules (FTP Port 21 / Specified port)")
+            MsgBox("Connection Failed, check IP address and firewall rules (FTP Port 21 / Specified port)", Title:="Error Information")
         End If
 
     End Sub

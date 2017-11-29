@@ -44,7 +44,7 @@ Module MainFunctions_Returns
                 internetValidation.nickname = nickname
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            SideFunctions.errorControl(ex.Message.ToString)
         End Try
 
 
