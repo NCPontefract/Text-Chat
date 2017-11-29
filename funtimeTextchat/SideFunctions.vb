@@ -24,6 +24,7 @@ Module SideFunctions
         If (Directory.Exists(startpath + "/" + dir)) Then
             'Exists
         Else
+            'Doesn't exist, creating
             Directory.CreateDirectory(startpath + "/" + dir)
         End If
     End Function
