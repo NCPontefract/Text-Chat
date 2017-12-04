@@ -33,6 +33,7 @@ Partial Class internetValidation
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -129,12 +130,23 @@ Partial Class internetValidation
         Me.Button3.Text = "Close"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button4.Location = New System.Drawing.Point(0, 87)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(337, 23)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "Add to Firewall "
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'internetValidation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(337, 87)
+        Me.ClientSize = New System.Drawing.Size(337, 110)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -146,8 +158,8 @@ Partial Class internetValidation
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.MaximumSize = New System.Drawing.Size(353, 126)
-        Me.MinimumSize = New System.Drawing.Size(353, 126)
+        Me.MaximumSize = New System.Drawing.Size(353, 148)
+        Me.MinimumSize = New System.Drawing.Size(353, 148)
         Me.Name = "internetValidation"
         Me.Text = "Connection Settings"
         Me.ResumeLayout(False)
@@ -166,4 +178,5 @@ Partial Class internetValidation
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class
