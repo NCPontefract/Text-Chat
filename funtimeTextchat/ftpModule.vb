@@ -108,10 +108,9 @@ Module ftpModule
     Friend Function read(ftpAddr As String, fileName As String, username As String, password As String, type As String)
         Try
             If (type = "internet") Then
-                ' Dim toDownload As String = (ftpAddr + "/" + fileName) 'Complete string of what to downlaod
-                Dim toRead As String = (ftpAddr + "/" + fileName)
+                Dim toRead As String = (ftpAddr + "/" + fileName) 'Complete string of what to download / read
                 ' Debugging tool -> MsgBox(toDownload)
-                Dim wrRead As FtpWebRequest = WebRequest.Create(toRead) 'Create Request To Download File
+                Dim wrRead As FtpWebRequest = WebRequest.Create(toRead) 'Create WebRequest To Read File
 
                 wrRead.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File
                 wrRead.Credentials = New NetworkCredential(username, password) 'Specify Username & Password
