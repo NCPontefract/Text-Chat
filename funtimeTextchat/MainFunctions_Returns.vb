@@ -64,7 +64,7 @@ Module MainFunctions_Returns
                 If (flagged = True) Then
                     'By leaving blank and setting the var to true in the else, a loop is avoided if more than 1 "'" is used
                 Else
-                    MsgBox("Illegal character detected")
+                    MsgBox("Illegal or empty character detected")
                     flagged = True
                     Return True
                 End If

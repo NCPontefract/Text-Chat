@@ -5,7 +5,7 @@ Module DatabaseComms
         If (checkSQL(username) = True) Then
             Return False
         End If
-        If (checkSQL(passwordPlain) = False) Then
+        If (checkSQL(passwordPlain) = True) Then
             Return False
         End If
 

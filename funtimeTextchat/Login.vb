@@ -4,9 +4,7 @@ Public Class Login
 
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-
         If (Lan.Checked = True) Then
-            'needs to check input sql
             If (DatabaseComms.login(UsernameTextBox.Text, PasswordTextBox.Text, "") = True And RoomTextBox.Text IsNot "") Then
                 Form1.Show()
                 groupID = RoomTextBox.Text
@@ -24,8 +22,6 @@ Public Class Login
         Else
             MsgBox("Please Select A Login Method (LAN / Internet)", Title:="Error Information")
         End If
-        'Pass ALL INFO
-        'Check Login if necessary (LAN database, not internet as database would be hard)
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
@@ -70,8 +66,14 @@ Public Class Login
     End Sub
 
     Private Sub register_Click(sender As Object, e As EventArgs) Handles register.Click
-        DatabaseComms.createUsr(UsernameTextBox.Text, PasswordTextBox.Text)
-        UsernameTextBox.Text = ""
-        PasswordTextBox.Text = ""
+        If (InputBox("Enter Admin Password:") = "MXRNWSAN") Then
+            If (UsernameTextBox.Text IsNot "" And PasswordTextBox.Text IsNot "") Then
+                DatabaseComms.createUsr(UsernameTextBox.Text, PasswordTextBox.Text)
+                UsernameTextBox.Text = ""
+                PasswordTextBox.Text = ""
+            Else
+                MsgBox("Please enter a username or password.")
+            End If
+        End If
     End Sub
 End Class
