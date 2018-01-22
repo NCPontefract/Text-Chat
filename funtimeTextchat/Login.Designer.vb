@@ -43,6 +43,7 @@ Partial Class Login
         Me.RoomLabel = New System.Windows.Forms.Label()
         Me.RoomTextBox = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.register = New System.Windows.Forms.Button()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -151,13 +152,23 @@ Partial Class Login
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(320, 135)
+        Me.Button1.Location = New System.Drawing.Point(12, 157)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Demo"
         Me.Button1.UseVisualStyleBackColor = True
         Me.Button1.Visible = False
+        '
+        'register
+        '
+        Me.register.Location = New System.Drawing.Point(319, 132)
+        Me.register.Name = "register"
+        Me.register.Size = New System.Drawing.Size(75, 23)
+        Me.register.TabIndex = 9
+        Me.register.Text = "Register"
+        Me.register.UseVisualStyleBackColor = True
+        Me.register.Visible = False
         '
         'Login
         '
@@ -167,6 +178,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 192)
+        Me.Controls.Add(Me.register)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Internet)
         Me.Controls.Add(Me.Lan)
@@ -197,4 +209,5 @@ Partial Class Login
     Friend WithEvents RoomLabel As Label
     Friend WithEvents RoomTextBox As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents register As Button
 End Class

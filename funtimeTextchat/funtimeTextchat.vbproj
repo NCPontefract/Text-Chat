@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="DatabaseComms.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +97,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ftpModule.vb" />
+    <Compile Include="HashHandle.vb" />
     <Compile Include="internetChatform.Designer.vb">
       <DependentUpon>internetChatform.vb</DependentUpon>
     </Compile>
