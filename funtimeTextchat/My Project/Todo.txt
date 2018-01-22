@@ -1,0 +1,5 @@
+﻿To Do List Of Things To Do:
+
+	> Directory creation if not found
+	> Necessary file creation if not found
+	

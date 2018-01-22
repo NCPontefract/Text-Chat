@@ -16,7 +16,7 @@ Module ftpModule
             strFile.Close()
             strFile.Dispose()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            SideFunctions.errorControl(ex.Message.ToString)
         End Try
 
     End Function
@@ -42,7 +42,7 @@ Module ftpModule
             rDownloadResponse.Close()
             Return True
         Catch ex As Exception
-            MsgBox(ex.Message)
+            SideFunctions.errorControl(ex.Message.ToString)
         End Try
     End Function
 
@@ -56,7 +56,7 @@ Module ftpModule
             Console.WriteLine("Delete status: {0}", rDeleteResponse.StatusDescription) 'Show Status Of Delete'
             rDeleteResponse.Close() 'Close'
         Catch ex As Exception
-            MsgBox(ex.Message)
+            SideFunctions.errorControl(ex.Message.ToString)
         End Try
 
     End Function
@@ -77,7 +77,7 @@ Module ftpModule
             strFile.Dispose()
             Return True
         Catch ex As Exception
-            MsgBox(ex.Message)
+            SideFunctions.errorControl(ex.Message.ToString)
             Return False
         End Try
         Dim toDelete As String = (ftpAddr + "/" + fileName)
@@ -89,7 +89,7 @@ Module ftpModule
             Console.WriteLine("Delete status: {0}", rDeleteResponse.StatusDescription) 'Show Status Of Delete'
             rDeleteResponse.Close() 'Close'
         Catch ex As Exception
-            MsgBox(ex.Message)
+            SideFunctions.errorControl(ex.Message.ToString)
         End Try
     End Function
 
@@ -108,10 +108,9 @@ Module ftpModule
     Friend Function read(ftpAddr As String, fileName As String, username As String, password As String, type As String)
         Try
             If (type = "internet") Then
-                ' Dim toDownload As String = (ftpAddr + "/" + fileName) 'Complete string of what to downlaod
-                Dim toRead As String = (ftpAddr + "/" + fileName)
+                Dim toRead As String = (ftpAddr + "/" + fileName) 'Complete string of what to download / read
                 ' Debugging tool -> MsgBox(toDownload)
-                Dim wrRead As FtpWebRequest = WebRequest.Create(toRead) 'Create Request To Download File
+                Dim wrRead As FtpWebRequest = WebRequest.Create(toRead) 'Create WebRequest To Read File
 
                 wrRead.Method = WebRequestMethods.Ftp.DownloadFile 'Specify That You Want To Download A File
                 wrRead.Credentials = New NetworkCredential(username, password) 'Specify Username & Password
@@ -163,7 +162,7 @@ Module ftpModule
             End If
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            SideFunctions.errorControl(ex.Message.ToString)
         End Try
 
 

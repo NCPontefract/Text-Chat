@@ -31,6 +31,7 @@ Partial Class internetChatform
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.send = New System.Windows.Forms.Button()
         Me.Updater = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'join
@@ -79,9 +80,9 @@ Partial Class internetChatform
         '
         'RichTextBox1
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(329, 10)
+        Me.RichTextBox1.Location = New System.Drawing.Point(329, 38)
         Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(194, 511)
+        Me.RichTextBox1.Size = New System.Drawing.Size(194, 483)
         Me.RichTextBox1.TabIndex = 5
         Me.RichTextBox1.Text = ""
         '
@@ -91,18 +92,29 @@ Partial Class internetChatform
         Me.send.Name = "send"
         Me.send.Size = New System.Drawing.Size(194, 23)
         Me.send.TabIndex = 6
-        Me.send.Text = "Send"
+        Me.send.Text = "&Send"
         Me.send.UseVisualStyleBackColor = True
         '
         'Updater
         '
         Me.Updater.Interval = 1000
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(446, 9)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 7
+        Me.Button1.Text = "Log Out"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'internetChatform
         '
+        Me.AcceptButton = Me.send
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(533, 562)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.send)
         Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.outputBox)
@@ -125,4 +137,5 @@ Partial Class internetChatform
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents send As Button
     Friend WithEvents Updater As Timer
+    Friend WithEvents Button1 As Button
 End Class

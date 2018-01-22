@@ -33,6 +33,7 @@ Partial Class internetValidation
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -83,14 +84,14 @@ Partial Class internetValidation
         Me.Password_Textbox.Location = New System.Drawing.Point(64, 59)
         Me.Password_Textbox.Name = "Password_Textbox"
         Me.Password_Textbox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Password_Textbox.Size = New System.Drawing.Size(100, 20)
+        Me.Password_Textbox.Size = New System.Drawing.Size(178, 20)
         Me.Password_Textbox.TabIndex = 2
         '
         'Username_Textbox
         '
         Me.Username_Textbox.Location = New System.Drawing.Point(64, 33)
         Me.Username_Textbox.Name = "Username_Textbox"
-        Me.Username_Textbox.Size = New System.Drawing.Size(100, 20)
+        Me.Username_Textbox.Size = New System.Drawing.Size(178, 20)
         Me.Username_Textbox.TabIndex = 1
         '
         'portTextbox
@@ -103,7 +104,7 @@ Partial Class internetValidation
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(7, 85)
+        Me.Button1.Location = New System.Drawing.Point(250, 5)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
@@ -113,7 +114,7 @@ Partial Class internetValidation
         'Button2
         '
         Me.Button2.Enabled = False
-        Me.Button2.Location = New System.Drawing.Point(88, 85)
+        Me.Button2.Location = New System.Drawing.Point(250, 32)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 4
@@ -122,18 +123,30 @@ Partial Class internetValidation
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(169, 85)
+        Me.Button3.Location = New System.Drawing.Point(250, 59)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 5
         Me.Button3.Text = "Close"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button4.Location = New System.Drawing.Point(0, 87)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(337, 23)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "Add to Firewall "
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'internetValidation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(252, 115)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(337, 110)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -145,6 +158,8 @@ Partial Class internetValidation
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.MaximumSize = New System.Drawing.Size(353, 148)
+        Me.MinimumSize = New System.Drawing.Size(353, 148)
         Me.Name = "internetValidation"
         Me.Text = "Connection Settings"
         Me.ResumeLayout(False)
@@ -163,4 +178,5 @@ Partial Class internetValidation
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

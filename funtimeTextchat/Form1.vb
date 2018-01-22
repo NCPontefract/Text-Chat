@@ -5,11 +5,14 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Join.Click
         MainFunctions_NoReturns.join()
         Me.RoomID.Enabled = False
+        Me.AcceptButton = Send
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Leave.Click
         MainFunctions_NoReturns.leave()
         Me.RoomID.Enabled = True
+        Me.AcceptButton = Join
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -19,6 +22,7 @@
 
     Private Sub Send_Click(sender As Object, e As EventArgs) Handles Send.Click
         MainFunctions_Returns.writeLanRoom(MessageInput.Text, nick)
+        Me.MessageInput.Text = ""
     End Sub
 
     Private Sub Logout_Click(sender As Object, e As EventArgs) Handles Logout.Click
@@ -36,5 +40,9 @@
             MainFunctions_NoReturns.updateBox()
         End If
 
+    End Sub
+
+    Private Sub me_close() Handles MyBase.Closing
+        Login.Show()
     End Sub
 End Class
