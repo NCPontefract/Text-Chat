@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.Data.OleDb
+Imports System.IO
 
 Module SideFunctions
     Friend Function errorControl(ex As String)
@@ -39,5 +40,25 @@ Module SideFunctions
         Catch
             MsgBox("User cancelled the operation", 16, "") ' User pressed No
         End Try
+    End Function
+
+    Friend Function CreateDB()
+        Dim cat As New ADOX.Catalog()
+        Dim myConnection As OleDbConnection = New OleDbConnection
+        Dim provider = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source ="
+        Dim dataFile = Application.StartupPath + "/LanUsers.accdb"
+        Dim connString = provider & dataFile
+        myConnection.ConnectionString = connString
+        cat.Create("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + Application.StartupPath + "/LanUsers.accdb")
+        cat = Nothing
+
+        myConnection.Open()
+        Dim createCommand As OleDbCommand = New OleDbCommand("CREATE TABLE [users]([UserID] int, [username] varchar(255), [password] varchar(255), [salt] varchar(255), [hash] varchar(255))", myConnection)
+        Dim createDataReader As OleDbDataReader = createCommand.ExecuteReader
+        While createDataReader.Read
+
+        End While
+        myConnection.Close()
+
     End Function
 End Module

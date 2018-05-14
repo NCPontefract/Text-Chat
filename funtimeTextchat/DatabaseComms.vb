@@ -26,14 +26,13 @@ Module DatabaseComms
             myConnection.Open() 'Checking username & finding salt
             'Convert passwordPlain to passwordHash using SALT from Db
         Catch ex As Exception
-            'If it doesn't exist
-            'File.Create("./LanUsers.accdb").Dispose() 'Create's files and .Dispose() ensures it is closed thereafter 
-
-
+            myConnection.Close()
+            'If it doesn't exist, create File
+            SideFunctions.CreateDB()
 
         End Try
 
-        myConnection.Open() 'Checking username & finding salt
+        'Checking username & finding salt
         'Convert passwordPlain to passwordHash using SALT from Db
 
         Dim command As OleDbCommand = New OleDbCommand("SELECT * FROM [users] WHERE [username] ='" & username & "'", myConnection)
@@ -90,7 +89,15 @@ Module DatabaseComms
         connString = provider & dataFile
         myConnection.ConnectionString = connString
 
-        myConnection.Open() 'Verify user doesn't already exist
+        Try
+            myConnection.Open() 'Verify user doesn't already exist
+        Catch ex As Exception
+            myConnection.Close()
+            'If it doesn't exist, create File
+            SideFunctions.CreateDB()
+            myConnection.Open()
+        End Try
+
         Dim command1 As OleDbCommand = New OleDbCommand("SELECT * FROM [users] WHERE [username] ='" & username & "'", myConnection)
         Dim dr1 As OleDbDataReader = command1.ExecuteReader
         Dim userFound As Boolean
