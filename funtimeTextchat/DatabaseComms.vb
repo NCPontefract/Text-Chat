@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.IO
 
 Module DatabaseComms
     Friend Function login(username, passwordPlain, passwordHash)
@@ -19,6 +20,18 @@ Module DatabaseComms
         dataFile = Application.StartupPath + "\LanUsers.accdb"
         connString = provider & dataFile
         myConnection.ConnectionString = connString
+
+        'First check if DB Exists
+        Try
+            myConnection.Open() 'Checking username & finding salt
+            'Convert passwordPlain to passwordHash using SALT from Db
+        Catch ex As Exception
+            'If it doesn't exist
+            'File.Create("./LanUsers.accdb").Dispose() 'Create's files and .Dispose() ensures it is closed thereafter 
+
+
+
+        End Try
 
         myConnection.Open() 'Checking username & finding salt
         'Convert passwordPlain to passwordHash using SALT from Db
