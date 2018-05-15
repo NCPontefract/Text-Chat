@@ -24,18 +24,19 @@ As far as I can remember, the only Prerequisite beisdes common sense and Windows
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+A step by step series of examples that tell you have to get the software installed
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Run the installer:
 
 ```
-until finished
+Probably just give it a filepath or execute in the desired path.
+```
+
+For LAN's / WAN's
+
+```
+Run the installer in a network location accessible by all
+Must be Read/Write enabled!
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
