@@ -6,7 +6,7 @@ This project also goes to show that the directories and support files (the datab
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes, but to be honest it's pretty much only going to be used for fun. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes, but to be honest it's pretty much only going to be used for fun. See Installing for notes on how to install the project on a live system.
 
 Firstly, you should at least have and know how to operate a computer system running Windows 7 or later, because who in 2018 is using anything below 7 (Obviously besides the NHS lol).
 
@@ -19,8 +19,15 @@ Once the exe is available to you, run it and the rest is pretty self explanatory
 What things you need to install the software and how to install them, but you already know that because you're reading the README file so you must know your stuff.
 
 ```
-As far as I can remember, the only Prerequisite beisdes common sense and Windows OS is Microsoft Access 2010 or later (Don't hate on me, I couldn't figure out how to use regualar, good, database file formats okay!)
+As far as I can remember, the only Prerequisites beisdes common sense and Windows OS are:
+Microsoft Access 2010 (x64) or later
+Microsoft Access Database Engine 2010 Redistributable
+
+
+(Don't hate on me, I couldn't figure out how to use regualar, good, database file formats okay!)
 ```
+[Microsoft Access Database Engine 2010 Redistributable](https://www.microsoft.com/en-gb/download/details.aspx?id=13255)
+
 
 ### Installing
 
