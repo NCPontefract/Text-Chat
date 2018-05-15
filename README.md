@@ -1,4 +1,4 @@
-# funtimeTextchat
+# Text Chat
 
 Side project to keep me sane. This project is an example of how ftp can be used to use different hosts to hold small 'chatroom' like text documents, and how they can be used alongside software to create a chatroom like client. That being said, the software also allows for LAN based chatrooms with a secure databse login for users (it hashes stuff so thats pretty cool). 
 
