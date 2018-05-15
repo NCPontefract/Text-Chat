@@ -69,7 +69,7 @@ I don't do versioning - check the commits if you're interested I guess.
 
 ## Authors
 
-* **Niall Askin** - *Initial work* - [Naskin99](https://github.com/Naskin99)
+* **Niall Askin** - *All work* - [Naskin99](https://github.com/Naskin99)
 
 
 ## License
