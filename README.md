@@ -48,13 +48,13 @@ Must be Read/Write enabled!
 
 ## Running the tests
 
-This bit will explain how to run the automated tests for this system
+This bit will explain how to run 'tests' for this system
 
 ### The only tests you can do 
 
 ```
 Try and break it.
-Seriously, if you want to test it (God knows why) I won't stop you.
+Seriously, if you want to test / break it (God knows why) I won't stop you.
 Just know you're going to be disgusted with my error handling.
 To test it, read the source code (there's gotta be errors in there) and try to break it.
 ```
