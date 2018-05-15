@@ -29,7 +29,7 @@ A step by step series of examples that tell you have to get the software install
 Run the installer:
 
 ```
-Probably just give it a filepath or execute in the desired path.
+Probably just give it a filepath to install to or execute the installer / application itself (If compiled via source code, you nerd) in the desired path.
 ```
 
 For LAN's / WAN's
@@ -39,58 +39,45 @@ Run the installer in a network location accessible by all
 Must be Read/Write enabled!
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
-Explain how to run the automated tests for this system
+This bit will explain how to run the automated tests for this system
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+### The only tests you can do 
 
 ```
-Give an example
+Try and break it.
+Seriously, if you want to test it (God knows why) I won't stop you.
+Just know you're going to be disgusted with my error handling.
+To test it, read the source code (there's gotta be errors in there) and try to break it.
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Visual Studio](https://www.visualstudio.com/) - The IDE used
+* [VB.Net](https://docs.microsoft.com/en-us/dotnet/visual-basic/) - Visual Basic (I know, I know)
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+There will be no contributing on this. If you want to change it, go for it I don't care who uses my source code.
+
+If, by some grace of God, this is useful to anyone, please consider recommending to a friend (They'll hate you after though) and check out my other public repos (They aren't all this bad don't worry)
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+I don't do versioning - check the commits if you're interested I guess.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Niall Askin** - *Initial work* - [Naskin99](https://github.com/Naskin99)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project has no licenses, I don't take this project (or most) too seriously if you can't already see, just enjoy the free code!
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Hat tip to people who helped
+
+* Probably Oliver Dunk, [Oliverdunk](https://github.com/oliverdunk) - helped with SQL injection stuff and general advice
